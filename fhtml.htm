@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">    
+    <title>Document</title>
+    <script src="form.js"></script>
+    <style>
+        body  {
+          background-image: url("te.jpg");
+        }
+    </style>
+</head>
+
+<body class="jumbotron jumbotron-fluid text-center">
+    <h1>DETAILS</h1>
+    <form action="/form" method="post">
+       
+        <b>NAME:</b><input type="text" name="name" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required><br><br>
+        <b>E-MAIL ID:</b><input type="text" size="25" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required><br><br>
+        <b>PHONE:</b><input type="number" name="phone" required><br><br>
+        <b>ADDRESS:</b><input type="text" name="address" required><br><br>
+        <b><label for="gender">GENDER:</label>
+        <input type="radio" name="gender" value="Male">Male</input>
+        <input type="radio" name="gender" value="Female">Female</input><br><br>
+        <input type="submit" class="btn btn-warning btn-outline-danger btn-primary btn-lg"  class="spinner-border spinner-border-sm" value="Submit">
+        </b>
+    </form>
+</body>
+</body>
+</html>
