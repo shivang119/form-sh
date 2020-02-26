@@ -3,7 +3,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://shivang:shivang@cluster0-4mdfp.mongodb.net/test?retryWrites=true";
 const client = new MongoClient(uri,{useNewUrlParser: true });
-let PORT = 3000|process.env.port
+let PORT = 3000|process.env.PORT
 
 
 app.use(express.urlencoded({
