@@ -3,6 +3,7 @@ const app = express();
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://shivang:shivang@cluster0-4mdfp.mongodb.net/test?retryWrites=true";
 const client = new MongoClient(uri,{useNewUrlParser: true });
+let PORT = 3000|process.env.port
 
 
 app.use(express.urlencoded({
@@ -37,6 +38,6 @@ app.get("/",(req,res)=>{
   
   });
   
-app.listen(3000,()=>{
+app.listen(PORT,()=>{
   console.log('Server started!')
 });
