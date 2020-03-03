@@ -32,7 +32,7 @@ app.get("/",(req,res)=>{
       else
       {
         console.log(data)
-        res.send("Thanks "+req.name)
+        res.send("Thanks "+req.body.name)
       }
     })
   
