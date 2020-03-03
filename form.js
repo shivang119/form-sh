@@ -35,7 +35,7 @@ app.get("/",(req,res)=>{
     console.log(req.body);
     var mailOptions = {
       from: 'shivang7427@gmail.com',
-      to: 'req.body.email',
+      to: req.body.email,
       subject: 'Sending Email using Node.js',
       text: 'That was easy!'
     };
