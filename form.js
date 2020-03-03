@@ -36,8 +36,8 @@ app.get("/",(req,res)=>{
     var mailOptions = {
       from: 'shivang7427@gmail.com',
       to: req.body.email,
-      subject: 'Sending Email using Node.js',
-      text: 'That was easy!'
+      subject: 'Confirmation email',
+      text: 'Thanks for choosing us '+req.body.name
     };
     
     transporter.sendMail(mailOptions, function(error, info){
