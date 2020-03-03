@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const nodemailer=require('nodemailer');
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://shivang:shivang@cluster0-4mdfp.mongodb.net/test?retryWrites=true";
 const client = new MongoClient(uri,{useNewUrlParser: true });
