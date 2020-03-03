@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const nodemailer=require('nodemailer');
+var nodemailer=require('nodemailer');
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://shivang:shivang@cluster0-4mdfp.mongodb.net/test?retryWrites=true";
 const client = new MongoClient(uri,{useNewUrlParser: true });
@@ -12,6 +12,13 @@ app.use(express.urlencoded({
 }))
 app.use(express.json())
 
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'shivang7427@gmail.com',
+    pass: 'vasu123@'
+  }
+});
 
 let f
 MongoClient.connect(uri, (err, client) => {
@@ -26,6 +33,20 @@ app.get("/",(req,res)=>{
 });
   app.post("/form",(req,res)=>{
     console.log(req.body);
+    var mailOptions = {
+      from: 'shivang7427@gmail.com',
+      to: 'req.body.email',
+      subject: 'Sending Email using Node.js',
+      text: 'That was easy!'
+    };
+    
+    transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    });
     f.insertOne(req.body, (err, data) => {
       if(err){
         console.log(err)
@@ -38,6 +59,7 @@ app.get("/",(req,res)=>{
     })
   
   });
+  
   
 app.listen(PORT,()=>{
   console.log('Server started!')
