@@ -8,28 +8,30 @@
     <title>Document</title>
     <script src="form.js"></script>
     <style>
-        body  {
-          background-image: url("te.jpg");
-        }
+    p.normal {
+        font-style: bold;
+        font-size: 16px;
+        font-family:Verdana, Geneva, sans-serif	
+;
+    }
     </style>
 </head>
-
 <body class="jumbotron jumbotron-fluid text-center">
-    <h1>DETAILS</h1>
+    <h1><u>DETAILS</u></h1><br>
     <form action="/form" method="post">
-       
-        <b><b>NAME:</b><input type="text" name="name" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required><br><br>
-        <b>E-MAIL ID:</b><input type="text" size="25" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required><br><br>
-        <b>PHONE:</b><input type="number" name="phone" required><br><br>
-        <b>ADDRESS:</b><input type="text" name="address" required><br><br>
-        <b><label for="gender">GENDER:</label>
+     <p class="normal">  
+        <b>NAME: &emsp;&nbsp;&nbsp;&nbsp;<input type="text" size="20" name="name" pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$" required><br><br>
+        E-MAIL ID: &nbsp;<input type="text" size="20" name="email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required><br><br>
+        PHONE:&emsp;&nbsp;&nbsp;&nbsp;<input type="number" size="20" name="phone" required><br><br>
+        ADDRESS:&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="20" name="address" required><br><br>
+        <label for="gender">GENDER:</label>
         <input type="radio" name="gender" value="Male">Male</input>
         <input type="radio" name="gender" value="Female">Female</input><br><br>
-        <b><label for="nation">NATIONALITY:</label></b>
+        <label for="nation">NATIONALITY:</label>
         <input type="radio" name="nation" value="Yes">Indian</input>
         <input type="radio" name="nation" value="No">Not Indian</input><br><br>
         <input type="submit" class="btn btn-warning btn-outline-danger btn-primary btn-lg"  class="spinner-border spinner-border-sm" value="Submit">
-        </b></b>
+        </b></p>
     </form>
 </body>
 </body>
